@@ -1,17 +1,24 @@
 #!/usr/bin/python3
-"""Class Square that defines a square"""
+
+"""Define a class Square."""
 
 
 class Square:
 
-    """Private instance attribute: size"""
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        """Initialize a new square.
+
+        Args:
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
+        """
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        return self.__size
+        """Get/set the current size of the square."""
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -23,7 +30,8 @@ class Square:
 
     @property
     def position(self):
-        return self.__position
+        """Get/set the current position of the square."""
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -34,18 +42,18 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-    """Public instance method: that returns the current square area"""
     def area(self):
-        return self.__size * self.__size
+        """Return the current area of the square."""
+        return (self.__size * self.__size)
 
-    """Public instance method that prints the square with the character #:"""
     def my_print(self):
+        """Print the square with the # character."""
         if self.__size == 0:
             print("")
             return
 
         [print("") for i in range(0, self.__position[1])]
-        for i in range(self.__size):
+        for i in range(0, self.__size):
             [print(" ", end="") for x in range(0, self.__position[0])]
             [print("#", end="") for y in range(0, self.__size)]
             print("")
