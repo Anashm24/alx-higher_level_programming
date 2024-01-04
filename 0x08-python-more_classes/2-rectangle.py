@@ -2,7 +2,7 @@
 """defines a class Rectangle"""
 
 
-class Rectangle():
+class Rectangle:
     """Class that defines a rectangle
     attributes: width of rectangle
               : height of rectangle
