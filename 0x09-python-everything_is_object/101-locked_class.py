@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""defines a class LockedClass"""
+"""Defines a locked class."""
 
 
 class LockedClass:
-    """a class with no class or object attribute
     """
-    def __setattr__(self, name, value):
-        if name != "first_name":
-            raise AttributeError("'LockedClass' object has \
-                                 no attribute '{}'".format(name))
-        self.__dict__[name] = value
+    Prevent the user from instantiating new LockedClass attributes
+    for anything but attributes called 'first_name'.
+    """
+
+    __slots__ = ["first_name"]
