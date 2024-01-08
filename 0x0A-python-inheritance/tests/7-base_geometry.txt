@@ -1,6 +1,6 @@
 """
 This is the "7-base_geometry.txt" module.
-The 7-base_geometry.txt module supplies one function, calculate(). For example,
+The 7-base_geometry.txt module supplies one function
 
 >>> bg = BaseGeometry()
 >>> bg.area()
