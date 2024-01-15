@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """defines a class Base"""
-from models.rectangle import Rectangle
 import json
 import csv
 import os
