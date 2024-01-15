@@ -5,7 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """a class that inherits from base"""
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle.
 
@@ -21,7 +21,7 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        
+
         self.width = width
         self.height = height
         self.x = x
@@ -40,7 +40,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
- 
+
     @property
     def height(self):
         """get the height of the Rectangle."""
@@ -66,7 +66,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-        
+
     @property
     def y(self):
         """get the x coordinate of the Rectangle."""
@@ -88,12 +88,13 @@ class Rectangle(Base):
         """Prints in stdout the Rectangle instance
         with the character #"""
         for line in range(self.__y):
-            print()    
+            print()
         for row in range(self.__height):
-            print(" " * self.__x,"#" * self.__width)
+            print(" " * self.__x, "#" * self.__width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+                f"{self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
@@ -116,22 +117,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        return {"width": self.__width, "height": self.__height,"x": self.__x,
+        return {"width": self.__width, "height": self.__height, "x": self.__x,
                 "y": self.__y, "id": self.id}
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(10, 10, 10, 10)
-    print(r1)
-
-    r1.update(height=1)
-    print(r1)
-
-    r1.update(width=1, x=2)
-    print(r1)
-
-    r1.update(y=1, width=2, x=3, id=89)
-    print(r1)
-
-    r1.update(x=1, height=2, y=3, width=4)
-    print(r1)
