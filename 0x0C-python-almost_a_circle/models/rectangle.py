@@ -89,6 +89,7 @@ class Rectangle(Base):
         with the character #"""
         if self.width == 0 or self.height == 0:
             print("")
+            return
         for line in range(self.__y):
             print()
         for row in range(self.__height):
