@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """defines a class Base"""
 import json
-
+import csv
+import os
 
 class Base:
     """this class is the base of all other classes"""
@@ -44,3 +45,29 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+        
+            
+    # @classmethod
+    # def load_from_file(cls):
+    #     if not os.path.exists(f"{cls.__name__}.json"):
+    #         return []
+    #     else:
+    #         with open(f"{cls.__name__}", "r") as json_file:
+                
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes and deserializes in CSV"""
+        with open(f"{cls.__name__}.csv", "w") as csv_file:
+            writer = csv.writer(csv_file)
+        for obj in list_objs:
+            writer.writerow(list(obj.__dict__.values()))
+    
+    @classmethod
+    def load_from_file_csv(cls):
+        with open(f"{cls.__name__}.csv", "r") as csv_file:
+            reader = csv.reader(csv_file)
+            return [cls(*row) for row in reader]
