@@ -4,10 +4,11 @@ import json
 import csv
 import os
 
+
 class Base:
     """this class is the base of all other classes"""
     __nb_objects = 0
-    
+
     def __init__(self, id=None):
         if id is not None:
             self.id = id
@@ -19,7 +20,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns the JSON string representation
         of list_dictionaries"""
-        
+
         if not list_dictionaries:
             return "[]"
         else:
@@ -29,18 +30,19 @@ class Base:
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of
         list_objs to a file"""
-         
+
         with open(f"{cls.__name__}.json", "w") as json_file:
             if not list_objs:
                 json_file.write("[]")
             else:
-                json_file.write(Base.to_json_string([obj.to_dictionary() for obj in list_objs]))
+                json_file.write(Base.to_json_string([obj.to_dictionary()
+                                                     for obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the JSON string 
+        """returns the list of the JSON string
         representation json_string"""
-        
+
         if not json_string:
             return []
         else:
@@ -49,15 +51,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set"""
-        
-            
+
     # @classmethod
     # def load_from_file(cls):
     #     if not os.path.exists(f"{cls.__name__}.json"):
     #         return []
     #     else:
     #         with open(f"{cls.__name__}", "r") as json_file:
-                
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Serializes and deserializes in CSV"""
@@ -65,7 +66,7 @@ class Base:
             writer = csv.writer(csv_file)
         for obj in list_objs:
             writer.writerow(list(obj.__dict__.values()))
-    
+
     @classmethod
     def load_from_file_csv(cls):
         with open(f"{cls.__name__}.csv", "r") as csv_file:
