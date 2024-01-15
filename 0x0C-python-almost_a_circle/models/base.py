@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """defines a class Base"""
+from models.rectangle import Rectangle
 import json
 import csv
 import os
@@ -50,7 +51,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attributes already set"""
+        """Return a class instantied from a dictionary of attributes."""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
 
     # @classmethod
     # def load_from_file(cls):
