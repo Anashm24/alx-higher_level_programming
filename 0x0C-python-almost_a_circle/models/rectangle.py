@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """defines a Rectangle class"""
 from base import Base
-import json
+
 
 
 class Rectangle(Base):
