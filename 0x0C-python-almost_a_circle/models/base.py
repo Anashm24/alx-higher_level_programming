@@ -65,6 +65,7 @@ class Base:
     #         return []
     #     else:
     #         with open(f"{cls.__name__}", "r") as json_file:
+                
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

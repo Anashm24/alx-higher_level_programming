@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """defines a Rectangle class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -87,6 +87,8 @@ class Rectangle(Base):
     def display(self):
         """Prints in stdout the Rectangle instance
         with the character #"""
+        if self.width == 0 or self.height == 0:
+            print("")
         for line in range(self.__y):
             print()
         for row in range(self.__height):
