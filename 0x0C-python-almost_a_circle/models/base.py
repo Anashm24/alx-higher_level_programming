@@ -60,14 +60,6 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        if not os.path.exists(f"{cls.__name__}.json"):
-            return []
-        else:
-            with open(f"{cls.__name__}", "r") as json_file:
-                reader = json.load(json_file)
-
-    @classmethod
-    def load_from_file(cls):
         """Return a list of classes instantiated from a file of
         JSON strings."""
         filename = str(cls.__name__) + ".json"
