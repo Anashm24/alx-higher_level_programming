@@ -2,8 +2,6 @@
 """defines a class Base"""
 import json
 import csv
-import os
-import turtle
 
 
 class Base:
