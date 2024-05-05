@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // a script that computes and prints a factorial
 function factorial (first) {
-  if (first <= 1) {
+  if (first <= 1 || isNaN(first)) {
     return 1;
   }
   return first * factorial(first - 1);
