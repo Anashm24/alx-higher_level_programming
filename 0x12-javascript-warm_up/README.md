@@ -1,6 +1,6 @@
 <h1>JavaScript</h1>
 
-## Definition
+## Definition:
 * JavaScript is a dynamic programming language that plays a crucial role in web development. It is the third layer of the standard web technologies, building upon HTML and CSS
 
 ## purpose of javascript:
