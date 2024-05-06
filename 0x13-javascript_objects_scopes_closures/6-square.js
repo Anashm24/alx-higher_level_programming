@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // a square and inherits from Square
-const SquareS = require('5-square.js');
+const SquareS = require('./5-square.js');
 
 class Square extends SquareS {
   charPrint (c) {
@@ -14,3 +14,8 @@ class Square extends SquareS {
 }
 
 module.exports = Square;
+
+const s1 = new Square(4);
+s1.charPrint();
+
+s1.charPrint('C');
